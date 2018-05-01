@@ -10,12 +10,16 @@ import {DetailPage} from "../detail/detail";
 export class HomePage {
   notes = [];
 
-  @ViewChild('myNav') nav: NavController
   constructor(public navCtrl: NavController, public noteService: NotesService) {
     this.notes = noteService.getNotes();
   }
 
-  public goToDeatil(){
-    this.navCtrl.push(DetailPage);
+  @ViewChild('myNav') nav: NavController;
+  public goToDeatil(id){
+    this.navCtrl.push(DetailPage, {id:id});
+  }
+
+  public createNote(){
+    this.navCtrl.push(DetailPage, {id:0});
   }
 }

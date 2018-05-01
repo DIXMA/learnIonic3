@@ -5,26 +5,24 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
     <ion-title>Detalle de nota</ion-title>
   </ion-navbar>
-
 </ion-header>
-
 
 <ion-content>
   <ion-list>
-
     <ion-item>
-      <ion-label floating>Username</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-label floating>Tiulo</ion-label>
+      <ion-input type="text" [(ngModel)]="note.title"></ion-input>
     </ion-item>
-
     <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-label floating>Descripcion</ion-label>
+      <ion-textarea [(ngModel)]="note.description"></ion-textarea>
     </ion-item>
-
   </ion-list>
+
+  <div padding>
+    <button ion-button round block (click)="addNote()">Guardar Nota</button>
+  </div>
 </ion-content>

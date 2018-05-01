@@ -8,8 +8,12 @@
 
 <ion-content>
   <ion-list inset>
-    <button ion-item *ngFor="let note of notes" (click)="goToDeatil()">
-      {{ note.titile }}
+    <button ion-item *ngFor="let note of notes" (click)="goToDeatil(note.id)">
+      {{ note.title }}
     </button>
   </ion-list>
+
+  <div padding>
+    <button ion-button round block (click)="createNote()">Crear Nota</button>
+  </div>
 </ion-content>
